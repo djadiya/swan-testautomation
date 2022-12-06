@@ -1,0 +1,6 @@
+Wed Nov 30 08:41:57.242 UTC
+In_Label, (ID), Path_Info: <Type>
+24001, (Lbl-Blk CBF, (start_label=24000, size=10000, owner=swanagent), 1 Paths,
+        Owner=Static(A):Service-layer
+   1/1: IPv4_STACK, 'default':4U, BE2, nh=2.2.2.2, lbls={ 35001 }
+            flags=0x0, ext_flags=0x0 path_flags=0x0

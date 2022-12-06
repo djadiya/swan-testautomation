@@ -1,0 +1,6 @@
+Value LABEL (\d{4,5})
+Value LABELS (.*)
+
+Start
+  ^${LABEL}
+  ^.* lbls=${LABELS} -> Record

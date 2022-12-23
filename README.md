@@ -9,5 +9,5 @@ import sys
 with open('showmplslsdoutput', 'w') as sys.stdout:
     print('decodedoutput ')
 
-Run testfsm test:
+Run testfsm test which utilizes showmpls.template:
 python3 textfsm_module.py

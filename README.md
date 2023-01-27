@@ -14,7 +14,8 @@ python3 textfsm_module.py
 
 ==================
 
-Taking action and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each device:
+Taking action ("bash docker restart SwanAgent")
+and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each device:
 python3.10 logtestaction2.py
 
 validating test cases on collected docker logs: 

@@ -14,7 +14,7 @@ python3 textfsm_module.py
 
 ==================
 
-Creating action around and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each device:
+Taking action and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each device:
 python3.10 logtestaction2.py
 
 validating test cases on collected docker logs: 

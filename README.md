@@ -12,9 +12,13 @@ with open('showmplslsdoutput', 'w') as sys.stdout:
 Run testfsm test which utilizes showmpls.template:
 python3 textfsm_module.py
 
+
 ==================
-Testing method for logs: Collect part of docker logs corresponding to performating action.
+
+Testing method for logs: Collect part of docker logs corresponding to performaing action.
+
 Used part of docker logs collected to verify action performed based tests.
+
 
 Taking action ("bash docker restart SwanAgent")
 and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each device:

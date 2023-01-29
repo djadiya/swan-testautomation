@@ -17,7 +17,11 @@ python3 textfsm_module.py
 
 ==================
 
-Testing method for logs: Collect part of docker logs corresponding to performing action.
+
+
+Testing method for logs: 
+
+Collect part of docker logs corresponding to performing action.
 
 Use part of docker logs collected to verify action performed based tests.
 

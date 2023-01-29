@@ -7,6 +7,7 @@ decodedoutput = pexpectoutput.after.decode()
 import sys
 
 with open('showmplslsdoutput', 'w') as sys.stdout:
+
     print('decodedoutput ')
 
 Run testfsm test which utilizes showmpls.template:
@@ -16,9 +17,9 @@ python3 textfsm_module.py
 
 ==================
 
-Testing method for logs: Collect part of docker logs corresponding to performaing action.
+Testing method for logs: Collect part of docker logs corresponding to performing action.
 
-Used part of docker logs collected to verify action performed based tests.
+Use part of docker logs collected to verify action performed based tests.
 
 
 Taking action ("bash docker restart SwanAgent")

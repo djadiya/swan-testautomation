@@ -4,11 +4,12 @@ from readtestbedjson import rnaddrouterobj
 import datetime
 today = datetime.date.today()
 yr = today.strftime("%Y")
+import re
 
 #cisco1obj = Addrouter("172.23.164.9", "60585")
 #cisco2obj = Addrouter("172.23.164.9", "60438")
 
-addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"])
+addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"], logtag="validation")
 print("routerobjs -- ", addrouterobjs)
 
 grepstringlist = ['Starting Probe v6 Server', 
@@ -32,6 +33,7 @@ grepstringlist = ['Starting Probe v6 Server',
                   'TLS enabled',
                   'Router connection error',
                   'Using backup credentials',
+                  'Using primary credentials',
                   'restart exponential back off policy'
                   ]
 
@@ -40,15 +42,23 @@ for device in addrouterobjs:
         try:
             commandgrep = "bash cat /tmp/new/dockerlogs2.log | grep -i '" + grepstring + "' | head -2"
             print(commandgrep)
-            outputgrep = device.sndcmd(commandgrep, use_textfsm=True, textfsm_template="showmpls3.template")
+            outputgrep = device.sndcmd(commandgrep, use_textfsm=True, textfsm_template="showmpls4.template")
             print(device.netmiko_connect.host,"  ",device.netmiko_connect.port)
             print("=" * 2 * len(device.netmiko_connect.host))
-            if type(outputgrep[0]) is dict:
-                if str(outputgrep[0]['year']) == yr:
-                    print(grepstring + " TEST_PASSED")
+            if (type(outputgrep[0]) is dict):
+                    if ((str(outputgrep[0]['year']) == yr)  and (outputgrep[0]['err'] == '')):
+                        print(grepstring + " TEST_PASSED")
+                        print(outputgrep)
+                    else:
+                        if outputgrep[0]['err'] != '':
+                            print(grepstring + " TEST_FAILED with ERRO")
+                            print(outputgrep)
+                        else:
+                            print(grepstring + " TEST_FAILED for missing grepstring")
+                            print(outputgrep)
             else:
-                print(grepstring + " TEST_FAILED")
-            print()
+                print(grepstring + " TEST_FAILED for not returning a dict")
+                print(outputgrep)
         except NetMikoTimeoutException:
             print("Device Unreachable")
         except Exception as e:

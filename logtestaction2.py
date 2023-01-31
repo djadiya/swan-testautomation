@@ -10,7 +10,7 @@ from readtestbedjson import rnaddrouterobj
 # use below call without any parameter to get all possible router objects from testbed.json file
 #addrouterobjs = rnaddrouterobj()
 
-addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"])
+addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"], logtag="action")
 print("routerobjs -- ", addrouterobjs)
 
 commandstart2 = "bash mkdir -p /tmp/new"

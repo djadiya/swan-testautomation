@@ -11,11 +11,12 @@ psword = "cisco123"
 
 class Addrouter():
     objseq = 0
-    def __init__(self, ip=None, prt=None):
+    def __init__(self, ip=None, prt=None, logtag="action"):
         self.ip = ip
         self.prt = prt
         Addrouter.objseq+=1
         self.objseq=Addrouter.objseq
+        self.logtag=logtag
         cisco_ios = {
             "device_type":"cisco_ios",
             "host": self.ip,
@@ -24,7 +25,7 @@ class Addrouter():
             "port": self.prt,
             "fast_cli": False,
             "global_delay_factor": 2.0,
-            "session_log": ip+'-netmiko_session.log',
+            "session_log": ip +'-'+ str(self.prt) +'-'+ self.logtag + str(self.objseq) +'-netmiko_session.log',
         }
         try:
             self.netmiko_connect = ConnectHandler(**cisco_ios)

@@ -12,7 +12,7 @@ with open('showmplslsdoutput', 'w') as sys.stdout:
 
 Run testfsm test which utilizes showmpls.template:
 
-python3 textfsm_module.py
+a) python3 textfsm_module.py
 
 
 ==================

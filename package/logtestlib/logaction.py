@@ -1,4 +1,4 @@
-from netmiko import ConnectHandler
+from netmiko import ConnectHan dler
 from netmiko  import (NetMikoAuthenticationException, NetMikoTimeoutException)
 from logtestlib.readtestbedjson import rnaddrouterobj
 from time import sleep
@@ -17,7 +17,7 @@ from time import sleep
 def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker restart SwanAgent",delaybstoplogging=10):
 
     commandstart2 = "bash mkdir -p /tmp/new"
-    commandstart3 = "bash docker logs -f -t  SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &"
+    commandstart3 = "bash docker logs -f --since 0m -t SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &"
     commandend = "bash fuser -k /tmp/new/dockerlogs2.log"
     
     for device in addrouterobjs:

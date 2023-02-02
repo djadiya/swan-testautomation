@@ -1,4 +1,4 @@
-from netmiko import ConnectHan dler
+from netmiko import ConnectHandler
 from netmiko  import (NetMikoAuthenticationException, NetMikoTimeoutException)
 from logtestlib.readtestbedjson import rnaddrouterobj
 from time import sleep

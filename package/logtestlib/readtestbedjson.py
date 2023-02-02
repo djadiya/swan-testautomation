@@ -11,7 +11,7 @@ def rntestbedjsongen(testbedjson):
     try:
         genobj = (line for line in testbedjson['devices'] if line['name'] != 'ixia_gui')
     except: 
-        print("Exception from function rnaddrouterobj")
+        print("Exception from function rntestbedjsongen")
         print(e)
     return genobj
 

@@ -14,5 +14,5 @@ source .venv/bin/activate
 (.venv) host:~$ git clone https://github.com/djadiya/swan-testautomation
 (.venv) host:~$ cd package
 
-#python3.10 test11.py -i <connecting-environment-deployment-testbed.json>
+#python3.10 test11.py -i <connecting-environment-deployment-testbed.json collected from jenkins build.log>
 (.venv) host:~/package$ python3.10 test11.py -i testbed.json

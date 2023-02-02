@@ -13,4 +13,6 @@ source .venv/bin/activate
 
 (.venv) host:~$ git clone https://github.com/djadiya/swan-testautomation
 (.venv) host:~$ cd package
-(.venv) host:~/package$ python3.10 test_tlsenabled_example.py
+
+#python3.10 test11.py -i <connecting-environment-deployment-testbed.json>
+(.venv) host:~/package$ python3.10 test11.py -i testbed.json

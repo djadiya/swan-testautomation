@@ -8,8 +8,13 @@ import os
 #testbedjson = {"platform": "8000", "devices": [{"name": "WAN_INGRESS", "role": "RWA", "ip": "172.23.164.2", "telnetPort": 11275, "sshPort": 63475}, {"name": "SWAN_INGRESS", "role": "OWR", "ip": "172.23.164.2", "telnetPort": 14749, "sshPort": 64934}, {"name": "SWAN_MIDPOINT", "role": "OWR", "ip": "172.23.164.2", "telnetPort": 25841, "sshPort": 61267}, {"name": "SWAN_PHP", "role": "OWR", "ip": "172.23.164.2", "telnetPort": 25079, "sshPort": 64048}, {"name": "SWAN_EGRESS", "role": "OWR", "ip": "172.23.164.2", "telnetPort": 23486, "sshPort": 60970}, {"name": "WAN_EGRESS", "role": "RWA", "ip": "172.23.164.2", "telnetPort": 29438, "sshPort": 61919}, {"name": "ixia_gui", "role": "TGN", "ip": "172.23.164.2", "ixiaPort": 23794}]}
 
 def rntestbedjsongen(testbedjson):
-    genobj = (line for line in testbedjson['devices'] if line['name'] != 'ixia_gui')
+    try:
+        genobj = (line for line in testbedjson['devices'] if line['name'] != 'ixia_gui')
+    except: 
+        print("Exception from function rnaddrouterobj")
+        print(e)
     return genobj
+
 def rnaddrouterobj(filterlst=[], logtag="action", testbed="../fixtures/testbed.json"):
     try:
         addrouterobjs = []
@@ -34,6 +39,7 @@ def rnaddrouterobj(filterlst=[], logtag="action", testbed="../fixtures/testbed.j
                     addrouterobjs.append(oname)
                 n += 1
     except Exception as e:
+        print("Exception from function rnaddrouterobj")
         print(e)
     return addrouterobjs
 

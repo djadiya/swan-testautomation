@@ -30,8 +30,9 @@ class Addrouter():
         try:
             self.netmiko_connect = ConnectHandler(**cisco_ios)
         except NetMikoAuthenticationException:
-            print("Authentication Failed")
+            print("Authentication Failed from Addrouter")
         except Exception as e:
+            print("Exception from Addrouter")
             print(e)
 
     def sndcmd(self, instruct, **kwargs):
@@ -40,4 +41,5 @@ class Addrouter():
             time.sleep(1)
             return res
         except Exception as e:
+            print("Exception from Addrouter sndcmd")
             print(e)

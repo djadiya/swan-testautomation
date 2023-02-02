@@ -59,6 +59,7 @@ def validatelogs(grepstringlist=grepstringlist,addrouterobjs="addrouterobjs",tex
             except NetMikoTimeoutException:
                 print("Device Unreachable from validatelogs")
             except Exception as e:
+                print("Excepion from validatelogs")
                 print(e)
 
 def validatelogscustextfsmret(grepstringlist=grepstringlist,addrouterobjs="addrouterobjs",textfsm_template="customyearerr.template"):
@@ -76,6 +77,7 @@ def validatelogscustextfsmret(grepstringlist=grepstringlist,addrouterobjs="addro
             except NetMikoTimeoutException:
                 print("Device Unreachable from function validatelogscustextfsmret")
             except Exception as e:
+                print("Exception from function validatelogscustextfsmret")
                 print(e)
     return retobj
 
@@ -91,6 +93,7 @@ def validateclicustextfsmret(cli="show mpls lsd forwarding labels 24001 detail",
         except NetMikoTimeoutException:
             print("Device Unreachable from validateclicustextfsmret")
         except Exception as e:
+            print("Exception from validateclicustextfsmret")
             print(e)
     return custextfsmret 
 
@@ -110,5 +113,6 @@ def validatecli(cli="show mpls lsd forwarding labels 24001 detail",addrouterobjs
         except NetMikoTimeoutException:
             print("Device Unreachable from validatecli")
         except Exception as e:
+            print("Exception from validatecli")
             print(e)
 

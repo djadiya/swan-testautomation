@@ -16,7 +16,7 @@ from time import sleep
 
 def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker restart SwanAgent",delaybstoplogging=10):
 
-    commandstart2 = "bash mkdir -p /tmp/new"
+    commandstart2 = "bash mkdir -p /tmp/new && touch /tmp/new/dockerlogs2.log && > /tmp/new/dockerlogs2.log"
     commandstart3 = "bash docker logs -f --since 0m -t SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &"
     commandend = "bash fuser -k /tmp/new/dockerlogs2.log"
     
@@ -33,8 +33,9 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
             print(outputstart3)
             print()
         except NetMikoTimeoutException:
-            print("Device Unreachable")
+            print("Device Unreachable from performactionforlogging")
         except Exception as e:
+            print("Exception from performactionforlogging")
             print(e)
     
     commandaction = act 
@@ -45,9 +46,10 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
         print(outputaction)
         print()
     except NetMikoTimeoutException:
-        print("Device Unreachable")
+        print("Device Unreachable from performactionforlogging commandaction")
     except Exception as e:
-            print(e)
+        print("Exception from performactionforlogging commandaction")
+        print(e)
     
     sleep(delaybstoplogging)    
 
@@ -59,6 +61,7 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
             print(outputend)
             print()
         except NetMikoTimeoutException:
-            print("Device Unreachable")
+            print("Device Unreachable from performactionforlogging commandend")
         except Exception as e:
+            print("Exception from performactionforlogging commandend")
             print(e)

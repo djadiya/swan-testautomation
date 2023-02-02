@@ -2,7 +2,7 @@
 
 Validating pexpect test cases:-
 
-a) from pexepect test get the showmplslsdoutput file
+a) From pexepect test get the showmplslsdoutput file
 
 decodedoutput = pexpectoutput.after.decode()
 
@@ -33,13 +33,13 @@ and saving docker logs corresponding to it in /tmp/new/dockerlogs.log on each de
 
 python3.10 logtestaction2.py
 
-b) validating test cases on collected docker logs:
+b) Validating test cases on collected docker logs:
 
 python3.10 validatelogtest2.py
 
 ==================
 
-writing test cases using package directory code:-
+Writing test cases using package directory code:-
 
 https://github.com/djadiya/swan-testautomation/blob/main/package/example_run_sample
 

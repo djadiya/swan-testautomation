@@ -4,14 +4,13 @@ apt install python3.10-venv
 sudo apt install python3.10-venv
 python3.10 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip list
-pip install git+https://github.com/ktbyers/netmiko.git@develop
-pip list | grep ntc-templates
-pip install genie
-pip install pyats
+(.venv) host:~$ pip install --upgrade pip
+(.venv) host:~$ pip list
+(.venv) host:~$ pip install git+https://github.com/ktbyers/netmiko.git@develop
+(.venv) host:~$ pip list | grep ntc-templates
+(.venv) host:~$ pip install genie
+(.venv) host:~$ pip install pyats
 
-git clone https://github.com/djadiya/swan-testautomation
-cd package
-
-~/package$ python3.10 test_tlsenabled_example.py
+(.venv) host:~$ git clone https://github.com/djadiya/swan-testautomation
+(.venv) host:~$ cd package
+(.venv) host:~/package$ python3.10 test_tlsenabled_example.py

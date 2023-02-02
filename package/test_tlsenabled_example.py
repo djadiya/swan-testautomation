@@ -14,4 +14,4 @@ def test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enab
     retcli = validateclicustextfsmret(cli, addrouterobjs, textfsm_template="fixtures/labels")
     print("retcli -",retcli)
 
-test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail")
+#test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail")

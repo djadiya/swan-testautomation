@@ -40,6 +40,7 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
             print(e)
 
     start = time()
+    print("START ", start))
     commandaction = "bash docker restart SwanAgent" 
     try:
         outputaction = addrouterobjs[0].sndcmd(commandaction, delay_factor=10)
@@ -58,8 +59,9 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
     for device in addrouterobjs:
         try:
             end = time()
-            sincetimeinseconds = int(end-start) + 10
-            commandend = "bash docker logs -t --since "+str(sincetimeinseconds)+" SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &"
+            print("END ", end)
+            sincetimeinseconds = int(end-start) + 2
+            commandend = "bash docker logs -t --since "+str(sincetimeinseconds)+"s SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &"
             outputend = device.sndcmd(commandend)
             print(commandend)
             print(device.netmiko_connect.host,"  ",device.netmiko_connect.port)

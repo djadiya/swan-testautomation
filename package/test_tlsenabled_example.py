@@ -3,10 +3,12 @@ from logtestlib.validateactionlogs import validatelogs, validatelogscustextfsmre
 from logtestlib.readtestbedjson import rnaddrouterobj
 
 def test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail"):
-    addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"],logtag="action")
+    addrouterobjs = rnaddrouterobj(["SWAN_EGRESS"],logtag="action")
+    #addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"],logtag="action")
     act=act
-    performactionforlogging(addrouterobjs,act=act,delaybstoplogging=2)
-    addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"],logtag="validation")
+    performactionforlogging(addrouterobjs,act=act,delaybstoplogging=20)
+    addrouterobjs = rnaddrouterobj(["SWAN_EGRESS"],logtag="validation")
+    #addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"],logtag="validation")
     grepstringlist = grepstringlist 
     validatelogs(grepstringlist,addrouterobjs,textfsm_template='fixtures/Year')
     retcustextfsm = validatelogscustextfsmret(grepstringlist,addrouterobjs,textfsm_template='fixtures/Year')

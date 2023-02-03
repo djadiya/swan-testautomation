@@ -1,7 +1,6 @@
 import logging
 import sys, getopt
 from test_tlsenabled_example import test_example
-from test11functions import test_verifyslapiservice, test_negtlsenabled
 
 def main(argv):
 
@@ -29,5 +28,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-    #test_verifyslapiservice()
-    test_negtlsenabled()
+    test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail")

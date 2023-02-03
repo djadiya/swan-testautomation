@@ -1,0 +1,19 @@
+{
+    "agentxr": {
+        "backupencryptcred": [],
+        "backupusername": "swanagent2",
+        "endblklabel": 99999,
+        "encryptcred": [],
+        "numEndpointSets": 1,
+        "port": "57400",
+        "server": "127.0.0.1",
+        "startblklabel": 34000,
+        "tlscaname": "ems.cisco.com",
+        "tlsfile": "/root/config/ems.pem",
+        "username": "swanagent1",
+        "loopback": "Loopback99",
+        "gmeCredsFile": "gme_secrets.json",
+        "useUnixSocket": "true",
+        "gRPCSocketFile": "/root/grpc.sock"
+    }
+}

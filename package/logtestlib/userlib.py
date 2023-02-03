@@ -1,5 +1,5 @@
-from netmiko import ConnectHandler
-from netmiko  import (NetMikoAuthenticationException, NetMikoTimeoutException)
+from netmiko import ConnectHandler, file_transfer
+from netmiko import (NetMikoAuthenticationException, NetMikoTimeoutException)
 #from getpass import getpass
 import time
 
@@ -20,8 +20,8 @@ class Addrouter():
         cisco_ios = {
             "device_type":"cisco_ios",
             "host": self.ip,
-            "username": "cisco",
-            "password": "cisco123",
+            "username": uname,
+            "password": psword,
             "port": self.prt,
             "fast_cli": False,
             "global_delay_factor": 2.0,
@@ -43,3 +43,38 @@ class Addrouter():
         except Exception as e:
             print("Exception from Addrouter sndcmd")
             print(e)
+
+    def transfiletortr(self, source_file="fixtures/toapplyconfig.json", dest_file="desttoapplyconfig.json", dest_dironrtr=None, dest_fileonrtr=None):
+        try:
+            filesystem = "/misc/scratch"
+            transfer_dict = file_transfer(
+                    self.netmiko_connect,
+                    source_file=source_file,
+                    dest_file=dest_file,
+                    file_system=filesystem,
+                    # use direction="get" to obtain file from router
+                    direction="put",
+                    overwrite_file=True,
+                    disable_md5=True,
+                    )
+            transfer_result = all(v for k,v in transfer_dict.items() if k in ["file_transferred","file_exists"]) 
+            if transfer_result:
+                if dest_dironrtr != None:
+                    if dest_fileonrtr != None:
+                        outputmv = self.sndcmd("bash mv "+filesystem+"/"+dest_file+" "+dest_dironrtr+"/"+dest_fileonrtr)
+                    else:
+                        print("dest_fileonrtr not provided")
+                else:
+                    print("dest_dironrtr not provided")
+            else:
+                print("file transfer failed: ", transfer_dict)
+
+            print(transfer_dict)
+            print("outputmv" ,outputmv)
+            return transfer_dict
+        except Exception as e:
+            print("Exception from Addrouter transfiletortr")
+            print(e)
+
+    def rtrconnhandle(self):
+            return self.netmiko_connect

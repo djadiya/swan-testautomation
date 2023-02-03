@@ -43,7 +43,22 @@ def rnaddrouterobj(filterlst=[], logtag="action", testbed="../fixtures/testbed.j
         print(e)
     return addrouterobjs
 
+def createconfigjson(inputdict = {}):
+    try:
+        with open('fixtures/config.json', 'r') as f:
+            data = json.load(f)
+            print(json.dumps(data, indent=4))
+            if inputdict:
+                for k in inputdict.keys():
+                    data[k]=inputdict[k]
+
+        with open('fixtures/toapplyconfig.json', 'w') as outfile:
+            json.dump(data, outfile, ensure_ascii=False)
+    except Exception as e:
+        print("Exception from function rcreateconfigjson")
+        print(e)
+
+
 #obtain all list of router objects by calling without filter parameters
 #rnaddrouterobj()
 #rnaddrouterobj(["SWAN_MIDPOINT","SWAN_PHP"])
-

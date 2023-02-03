@@ -28,4 +28,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-    test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail")
+    #test_example(act="bash docker restart SwanAgent",grepstringlist = ["TLS enabled"], cli="show mpls lsd forwarding labels 24001 detail")

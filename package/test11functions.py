@@ -6,6 +6,7 @@ def test_verifyslapiservice():
     act = "bash docker restart SwanAgent"
     addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT"],logtag="action")
     performactionforlogging(addrouterobjs,act=act,delaybstoplogging=5)
+    
     addrouterobjs = rnaddrouterobj(["SWAN_MIDPOINT"],logtag="validation")
     grepstringlist = ["Entered trial 1 for loop process",
             "SL-API server returned SL_INIT_STATE_READY",

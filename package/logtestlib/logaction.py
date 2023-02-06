@@ -40,7 +40,7 @@ def performactionforlogging(addrouterobjs="addrouterobjs",act="bash docker resta
             print(e)
 
     start = time()
-    print("START ", start))
+    print("START ", start)
     commandaction = "bash docker restart SwanAgent" 
     try:
         outputaction = addrouterobjs[0].sndcmd(commandaction, delay_factor=10)

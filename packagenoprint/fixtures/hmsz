@@ -1,0 +1,6 @@
+Value hmsz (.*..:.*:.*)
+Value err (INFO|DEBU|ERRO|WARN)
+Value message (.*)
+
+Start
+  ^${hmsz}\s.*${err}.*]${message} -> Record

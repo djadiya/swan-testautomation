@@ -1,0 +1,103 @@
+
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#terminal width 511
+
+Mon Feb  6 22:28:38.403 UTC
+RP/0/RP0/CPU0:SWAN_MIDPOINT#terminal length 0
+
+Mon Feb  6 22:28:38.649 UTC
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'SWAN Agent version' | head -2
+
+Mon Feb  6 22:28:40.854 UTC
+2023-02-06T22:28:27.510963051Z [36mINFO[0m[Feb  6 22:28:27.509714] SWAN Agent version:2.3.1-ee8cf43 platform:IOS-XR 
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'Entered setConn function' | head -2
+
+Mon Feb  6 22:28:43.189 UTC
+2023-02-06T22:28:27.510987977Z [36mINFO[0m[Feb  6 22:28:27.510041] Entered setConn function.                    
+2023-02-06T22:28:27.518109660Z [36mINFO[0m[Feb  6 22:28:27.517552] Entered setConn function.                    
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'Entered trial 1 for loop process' | head -2
+
+Mon Feb  6 22:28:45.549 UTC
+2023-02-06T22:28:27.511008014Z [36mINFO[0m[Feb  6 22:28:27.510262] Entered trial 1 for loop process.            
+2023-02-06T22:28:27.518121066Z [36mINFO[0m[Feb  6 22:28:27.517670] Entered trial 1 for loop process.            
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'SL-API server returned SL_INIT_STATE_READY' | head -2
+
+Mon Feb  6 22:28:47.877 UTC
+2023-02-06T22:28:27.518080103Z [36mINFO[0m[Feb  6 22:28:27.517505] SL-API server returned SL_INIT_STATE_READY, Version: 0.4.0 
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'SL-API heartbeat channel established' | head -2
+
+Mon Feb  6 22:28:50.211 UTC
+2023-02-06T22:28:27.518099985Z [36mINFO[0m[Feb  6 22:28:27.517529] SL-API heartbeat channel established.        
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'TCP connection successfully established' | head -2
+
+Mon Feb  6 22:28:52.521 UTC
+2023-02-06T22:28:27.518103829Z [36mINFO[0m[Feb  6 22:28:27.517537] TCP connection successfully established.     
+2023-02-06T22:28:27.544514185Z [36mINFO[0m[Feb  6 22:28:27.544302] TCP connection successfully established.     
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'TLS enabled' | head -2
+
+Mon Feb  6 22:28:54.850 UTC
+2023-02-06T22:28:27.510991209Z [36mINFO[0m[Feb  6 22:28:27.510213] TLS enabled.                                 
+2023-02-06T22:28:27.518112683Z [36mINFO[0m[Feb  6 22:28:27.517639] TLS enabled.                                 
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'TLS enabled' | head -2
+
+Mon Feb  6 22:28:57.212 UTC
+2023-02-06T22:28:27.510991209Z [36mINFO[0m[Feb  6 22:28:27.510213] TLS enabled.                                 
+2023-02-06T22:28:27.518112683Z [36mINFO[0m[Feb  6 22:28:27.517639] TLS enabled.                                 
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'GME credentials are not available' | head -2
+
+Mon Feb  6 22:28:59.540 UTC
+2023-02-06T22:28:27.518123724Z [33mWARN[0m[Feb  6 22:28:27.517675] GME credentials are not available            
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'Entered trial 2 for loop process' | head -2
+
+Mon Feb  6 22:29:01.865 UTC
+2023-02-06T22:28:27.518126489Z [36mINFO[0m[Feb  6 22:28:27.517681] Entered trial 2 for loop process.            
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'Using primary credentials, user:msft' | head -2
+
+Mon Feb  6 22:29:04.247 UTC
+2023-02-06T22:28:27.518129169Z [36mINFO[0m[Feb  6 22:28:27.517692] Using primary credentials, user:msft         
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash cat /tmp/new/dockerlogs2.log | grep -i 'TCP connection successfully established' | head -2
+
+Mon Feb  6 22:29:06.629 UTC
+2023-02-06T22:28:27.518103829Z [36mINFO[0m[Feb  6 22:28:27.517537] TCP connection successfully established.     
+2023-02-06T22:28:27.544514185Z [36mINFO[0m[Feb  6 22:28:27.544302] TCP connection successfully established.     
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#

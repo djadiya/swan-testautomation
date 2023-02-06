@@ -1,0 +1,32 @@
+
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#terminal width 511
+
+Mon Feb  6 22:28:22.101 UTC
+RP/0/RP0/CPU0:SWAN_MIDPOINT#terminal length 0
+
+Mon Feb  6 22:28:22.335 UTC
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash mkdir -p /tmp/new && touch /tmp/new/dockerlogs2.log && > /tmp/new/dockerlogs2.log
+
+Mon Feb  6 22:28:24.527 UTC
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash docker restart SwanAgent
+
+Mon Feb  6 22:28:26.881 UTC
+SwanAgent
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#bash docker logs -t --since 9s SwanAgent > /tmp/new/dockerlogs2.log 2>&1 &
+
+Mon Feb  6 22:28:34.753 UTC
+
+RP/0/RP0/CPU0:SWAN_MIDPOINT#

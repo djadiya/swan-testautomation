@@ -1,0 +1,4 @@
+Value Year (\d{4})
+
+Start
+  ^${Year} -> Record
